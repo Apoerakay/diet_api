@@ -1,15 +1,15 @@
 import e, { Router } from "express";
 import { addCondition, deleteCondition, getCondition, getConditions, patchCondition } from "../controllers/conditionsController.js";
 import { addMeals, deleteMeal, getMeal, getMeals, patchMeal } from "../controllers/mealsController.js";
-import { addRecipes, deleteRecipe, getRecipes, getrecipe, patchRecipe } from "../controllers/recipesController";
-import { addUsers, deleteUser, getUser, getUsers } from "../controllers/usersController.js";
+import { addRecipes, deleteRecipe, getRecipes, getrecipe, patchRecipe } from "../controllers/recipesController.js";
+import { addUsers, getUser,getUsers,patchUser, deleteUser} from "../controllers/usersController.js";
 
 
 
 const router = Router()
 
-router.post('/addCoditions', addCondition)
-router.get('fetchConditions', getConditions)
+router.post('/addConditions', addCondition)
+router.get('/fetchConditions', getConditions)
 router.get('/fetchCondition/:id', getCondition)
 router.patch('/updateCondition/:id', patchCondition)
 router.delete('/removeCondition/:id', deleteCondition)
@@ -32,7 +32,11 @@ router.delete('/removeRecipe/:id', deleteRecipe)
 
 
 
-router.post('/addUsers', addUsers)
-router.get('/fetchUsers', getUsers)
-router.get('/fetchUser/:id', getUser)
+router.post('/signup', addUsers)
+router.get('/fetchUsers', getUser)
+router.get('/fetchUser/:id', getUsers)
+router.patch('/updateUser/:id', patchUser)
 router.delete('/removeUser/:id', deleteUser)
+
+
+export default router

@@ -1,14 +1,26 @@
 import express from "express"
 import dotenv from "dotenv"
+import router from "../routes/allroutes.js";
+import mongoose from "mongoose";
+import cors from "cors" 
+ 
 
 dotenv.config()
 
 
 const server = express();
 
-const PORT = 6000
+server.use(express.json())
+server.use(cors())
+server.use(express.urlencoded({extended:false}))
+
+server.use(router)
+ 
+const PORT = process.env.PORT || 7070
+
+ await mongoose.connect(process.env.MongoUri)
 
 
 server.listen(PORT, () =>{
-  console.log("express app is running")
+  console.log(`server is running ${PORT}`)
 })

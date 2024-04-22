@@ -1,6 +1,6 @@
 import { mealsModel } from "../models/mealsModel.js";
 
-export const addMeals = async(res,req)=>{
+export const addMeals = async(req,res)=>{
  try {
    const data = req.body
    const postMeals = await mealsModel.create(data)
@@ -23,7 +23,7 @@ export const getMeals = async (res,req) =>{
 };
 
 
-export const getMeal = async (res, req) =>{
+export const getMeal = async (req, res) =>{
  try {
    const id = req.body
    const fetchMeal = await mealsModel.findById(id)
@@ -35,7 +35,7 @@ export const getMeal = async (res, req) =>{
 };
 
 
-export const patchMeal = async (res, req) =>{
+export const patchMeal = async (req, res) =>{
   try {
     const id = req.body
     const updateMeal = await mealsModel.findByIdAndUpdate(id)
@@ -47,7 +47,7 @@ export const patchMeal = async (res, req) =>{
 
 };
 
-export const deleteMeal = async (res,req) =>{
+export const deleteMeal = async (req,res) =>{
   try {
     const id = req.body
     const removeMeal = await mealsModel.findByIdAndDelete(id)

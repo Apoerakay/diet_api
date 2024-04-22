@@ -1,7 +1,7 @@
 import { recipesModel } from "../models/recipesModel.js";
 
 
-export const addRecipes = async (res,req) =>{
+export const addRecipes = async (req,res) =>{
   try {
     const data = req.body
     const postRecipes = await recipesModel.create(data)
@@ -11,7 +11,7 @@ export const addRecipes = async (res,req) =>{
   }
 };
 
-export const getRecipes = async(res,req) =>{
+export const getRecipes = async(req,res) =>{
  try {
    const data = req.body
    const fetchRecipes = await recipesModel.find(data)
@@ -23,7 +23,7 @@ export const getRecipes = async(res,req) =>{
 };
 
 
-export const getrecipe = async(res,req) =>{
+export const getrecipe = async(req,res) =>{
   try {
     const id = req.params.id
     const fetchRecipe = await recipesModel.findById(id)
@@ -34,7 +34,7 @@ export const getrecipe = async(res,req) =>{
   }
 };
 
-export const patchRecipe = async (res, req) => {
+export const patchRecipe = async (req, res) => {
  try {
    const id = req.params.id
    const updaterecipe = await recipesModel.findByIdAndUpdate(id)
@@ -46,7 +46,7 @@ export const patchRecipe = async (res, req) => {
 
 };
 
-export const deleteRecipe = async (res,req) =>{
+export const deleteRecipe = async (req,res) =>{
  try {
    const id = req.params.id
    const removeRecipe = await recipesModel.findByIdAndDelete(id)

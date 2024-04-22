@@ -1,6 +1,7 @@
 import { conditionModel } from "../models/conditionsModel.js";
 
-export const addCondition = async (res, req) => {
+
+export const addCondition = async (req, res) => {
   try {
     const data = req.body
     const postCondition = await conditionModel.create(data)
@@ -11,7 +12,7 @@ export const addCondition = async (res, req) => {
   }
 };
 
-export const getConditions = async (res, req)=>{
+export const getConditions = async (req, res)=>{
   try {
     const data = req.body
     const fetchConditions= await conditionModel.find(data)
@@ -22,7 +23,7 @@ export const getConditions = async (res, req)=>{
   }
 };
 
-export const getCondition = async (res, req) =>{
+export const getCondition = async (req, res) =>{
  try {
    const id = req.params.id
    const fetchCondition = await conditionModel.findById(id)
@@ -34,7 +35,7 @@ export const getCondition = async (res, req) =>{
 };
 
 
-export const patchCondition = async (res,req) =>{
+export const patchCondition = async (req,res) =>{
   try {
     const id = req.params.id
     const updateCondition = await conditionModel.findByIdAndDelete(id)
@@ -48,7 +49,7 @@ export const patchCondition = async (res,req) =>{
 
 
 
-export const deleteCondition = async (res, req) =>{
+export const deleteCondition = async (req, res) =>{
 try {
   const id = req.params.id
   const removecondition = await conditionModel.findByIdAndDelete(id)
