@@ -2,10 +2,10 @@ import { Schema, model } from "mongoose";
 
 
 const mealsSchema = new Schema({
-  title: {type: String, required: true},
+  meals: new Array(),
   condition: {type: String, requred: true},
   timeOfDay: {type: String, required: true},
-  images: {type: String},
+  image: {type: String},
   
 
 })

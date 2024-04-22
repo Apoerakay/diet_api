@@ -19,7 +19,7 @@ server.use(router)
 const PORT = process.env.PORT || 7070
 
  await mongoose.connect(process.env.MongoUri)
-
+console.log("database connected")
 
 server.listen(PORT, () =>{
   console.log(`server is running ${PORT}`)

@@ -1,6 +1,6 @@
 import { mealsModel } from "../models/mealsModel.js";
 
-export const addMeals = async(req,res)=>{
+export const  addMeals = async(req,res)=>{
  try {
    const data = req.body
    const postMeals = await mealsModel.create(data)
