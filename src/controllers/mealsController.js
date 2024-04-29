@@ -11,7 +11,7 @@ export const  addMeals = async(req,res)=>{
  }
 };
 
-export const getMeals = async (res,req) =>{
+export const getMeals = async (req,res) =>{
  try {
    const data = req.body
    const fetchmeals = await mealsModel.find(data)
